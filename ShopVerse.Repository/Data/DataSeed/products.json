@@ -1,0 +1,162 @@
+[
+  {
+    "Name": "iPhone 15 Pro Max",
+    "Description": "Apple's latest flagship smartphone with A17 Pro chip, titanium frame, and advanced camera system.",
+    "PictureUrl": "images/products/iphone15promax.png",
+    "TypeId": 1,
+    "BrandId": 1,
+    "Price": 1199.99
+  },
+  {
+    "Name": "Samsung Galaxy S24 Ultra",
+    "Description": "Premium Android smartphone with S Pen, 200MP camera, and AMOLED display.",
+    "PictureUrl": "images/products/galaxys24ultra.png",
+    "TypeId": 1,
+    "BrandId": 2,
+    "Price": 1099.99
+  },
+  {
+    "Name": "MacBook Pro 16 M3",
+    "Description": "High-performance laptop with Apple's M3 chip and Liquid Retina XDR display.",
+    "PictureUrl": "images/products/macbookpro16.png",
+    "TypeId": 2,
+    "BrandId": 1,
+    "Price": 2499.99
+  },
+  {
+    "Name": "Lenovo Legion 5",
+    "Description": "Gaming laptop with AMD Ryzen processor and NVIDIA RTX graphics.",
+    "PictureUrl": "images/products/legion5.png",
+    "TypeId": 2,
+    "BrandId": 3,
+    "Price": 1299.99
+  },
+  {
+    "Name": "Logitech MX Master 3S",
+    "Description": "Advanced wireless mouse with ergonomic design and customizable buttons.",
+    "PictureUrl": "images/products/mxmaster3s.png",
+    "TypeId": 3,
+    "BrandId": 5,
+    "Price": 99.99
+  },
+  {
+    "Name": "Dell UltraSharp Monitor 27\"",
+    "Description": "Professional 4K monitor for designers and developers with USB-C connectivity.",
+    "PictureUrl": "images/products/dellultrasharp27.png",
+    "TypeId": 3,
+    "BrandId": 4,
+    "Price": 499.99
+  },
+  {
+    "Name": "HP Envy x360",
+    "Description": "2-in-1 convertible laptop with touch screen and AMD Ryzen 7 processor.",
+    "PictureUrl": "images/products/hpenvyx360.png",
+    "TypeId": 2,
+    "BrandId": 6,
+    "Price": 849.99
+  },
+  {
+    "Name": "iPad Pro 12.9",
+    "Description": "Apple's top-tier tablet with M2 chip and ProMotion display.",
+    "PictureUrl": "images/products/ipadpro12.png",
+    "TypeId": 4,
+    "BrandId": 1,
+    "Price": 1399.99
+  },
+  {
+    "Name": "Samsung Galaxy Tab S9",
+    "Description": "High-end Android tablet with AMOLED display and S Pen support.",
+    "PictureUrl": "images/products/galaxytabs9.png",
+    "TypeId": 4,
+    "BrandId": 2,
+    "Price": 899.99
+  },
+  {
+    "Name": "Logitech G Pro X Keyboard",
+    "Description": "Mechanical gaming keyboard with swappable switches and RGB lighting.",
+    "PictureUrl": "images/products/gproxkeyboard.png",
+    "TypeId": 3,
+    "BrandId": 5,
+    "Price": 129.99
+  },
+  {
+    "Name": "ASUS ROG Strix G16",
+    "Description": "Powerful gaming laptop with Intel i9 and RTX 4070 graphics, designed for high-performance gaming.",
+    "PictureUrl": "images/products/rogstrixg16.png",
+    "TypeId": 2,
+    "BrandId": 4,
+    "Price": 1799.99
+  },
+  {
+    "Name": "Apple AirPods Pro 2",
+    "Description": "Wireless noise-cancelling earbuds with MagSafe charging case and spatial audio.",
+    "PictureUrl": "images/products/airpodspro2.png",
+    "TypeId": 3,
+    "BrandId": 1,
+    "Price": 249.99
+  },
+  {
+    "Name": "Samsung Galaxy Buds2 Pro",
+    "Description": "Premium wireless earbuds with active noise cancellation and studio quality sound.",
+    "PictureUrl": "images/products/galaxybuds2pro.png",
+    "TypeId": 3,
+    "BrandId": 2,
+    "Price": 229.99
+  },
+  {
+    "Name": "Lenovo ThinkPad X1 Carbon",
+    "Description": "Ultra-light business laptop with exceptional performance and long battery life.",
+    "PictureUrl": "images/products/thinkpadx1carbon.png",
+    "TypeId": 2,
+    "BrandId": 3,
+    "Price": 1699.99
+  },
+  {
+    "Name": "Dell XPS 13 Plus",
+    "Description": "Compact ultrabook with borderless display and high-end Intel processor.",
+    "PictureUrl": "images/products/dellxps13plus.png",
+    "TypeId": 2,
+    "BrandId": 4,
+    "Price": 1499.99
+  },
+  {
+    "Name": "HP Omen 45L Gaming Desktop",
+    "Description": "High-performance desktop for gaming with liquid cooling and RTX 4080 GPU.",
+    "PictureUrl": "images/products/hpomen45l.png",
+    "TypeId": 3,
+    "BrandId": 6,
+    "Price": 2599.99
+  },
+  {
+    "Name": "Apple Magic Keyboard",
+    "Description": "Sleek and rechargeable wireless keyboard designed for Mac systems.",
+    "PictureUrl": "images/products/magickeyboard.png",
+    "TypeId": 3,
+    "BrandId": 1,
+    "Price": 99.99
+  },
+  {
+    "Name": "Samsung Galaxy Tab A9+",
+    "Description": "Affordable Android tablet with large screen and long battery life.",
+    "PictureUrl": "images/products/galaxytaba9plus.png",
+    "TypeId": 4,
+    "BrandId": 2,
+    "Price": 199.99
+  },
+  {
+    "Name": "Logitech StreamCam",
+    "Description": "Full HD webcam designed for streamers and content creators.",
+    "PictureUrl": "images/products/logitechstreamcam.png",
+    "TypeId": 3,
+    "BrandId": 5,
+    "Price": 139.99
+  },
+  {
+    "Name": "HP Spectre x360",
+    "Description": "Premium 2-in-1 ultrabook with touch display and stylus support.",
+    "PictureUrl": "images/products/hpspectrex360.png",
+    "TypeId": 2,
+    "BrandId": 6,
+    "Price": 1599.99
+  }
+]
