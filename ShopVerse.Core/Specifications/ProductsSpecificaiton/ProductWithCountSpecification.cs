@@ -20,6 +20,6 @@ namespace ShopVerse.Core.Specifications.ProductsSpecificaiton
         {
          
         }
-
+        
     }
 }
