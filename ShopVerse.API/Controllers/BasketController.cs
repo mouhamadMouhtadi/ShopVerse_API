@@ -21,10 +21,17 @@ namespace ShopVerse.API.Controllers
         [HttpGet]
         public async Task<ActionResult<CustomerBasket>> GetBasket (string? id)
         {
-            if(id is null) return BadRequest(new ApiErrorResponse(400, "Basket ID cannot be null."));
-            var basket = await _basketRepository.GetBasketAsync(id);
-            if (basket is null) new CustomerBasket() { Id = id};
-            return Ok(basket);
+            {
+                if (id is null)
+                    return BadRequest(new ApiErrorResponse(400, "Basket ID cannot be null."));
+
+                var basket = await _basketRepository.GetBasketAsync(id);
+
+                if (basket is null)
+                    return Ok(new CustomerBasket() { Id = id, Items = new List<BasketItem>() });
+
+                return Ok(basket);
+            }
         }
         [HttpPost]
         public async Task<ActionResult<CustomerBasket>> CreateOrUpdateBasket (CustomerBasketDto model)

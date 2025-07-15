@@ -10,7 +10,7 @@ namespace ShopVerse.Core
 {
     public interface IUnitOfWork
     {
-       Task<int> CompleteAync();
+        Task<int> CompleteAsync();
         IGenericRepository<TEntity,TKey> Repository<TEntity,TKey>() where TEntity : BaseEntity<TKey>;
     }
 }

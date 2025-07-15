@@ -14,6 +14,7 @@ namespace ShopVerse.Core.Mapping.Baskets
         public BasketProfile()
         {
             CreateMap<CustomerBasket,CustomerBasketDto>().ReverseMap();
+            CreateMap<BasketItem, BasketItemDto>().ReverseMap();
         }
     }
 }

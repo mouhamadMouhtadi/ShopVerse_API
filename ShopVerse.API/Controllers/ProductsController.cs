@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ShopVerse.API.Attributes;
 using ShopVerse.API.Errors;
 using ShopVerse.Core;
 using ShopVerse.Core.Dtos.Product;
@@ -20,6 +22,8 @@ namespace ShopVerse.API.Controllers
         }
         [ProducesResponseType(typeof(PaginationResponse<ProductDto>),StatusCodes.Status200OK)]
         [HttpGet]
+        [Cached(100)]
+        [Authorize]
         public async Task<ActionResult<PaginationResponse<ProductDto>>> GetAllProducts([FromQuery] ProductSpecParams productSpec)
         {
             var result = await _productService.GetAllProductsAsync(productSpec);
@@ -27,6 +31,7 @@ namespace ShopVerse.API.Controllers
         }
         [ProducesResponseType(typeof(IEnumerable<TypeBrandDto>), StatusCodes.Status200OK)]
         [HttpGet("brands")]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<TypeBrandDto>>> GetAllBrands()
         {
             var result = await _productService.GetAllBrandsAsync();
@@ -34,6 +39,7 @@ namespace ShopVerse.API.Controllers
         }
         [ProducesResponseType(typeof(IEnumerable<TypeBrandDto>), StatusCodes.Status200OK)]
         [HttpGet("types")]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<TypeBrandDto>>> GetAllTypes()
         {
             var result = await _productService.GetAllTypesAsync();

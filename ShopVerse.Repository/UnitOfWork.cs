@@ -23,8 +23,7 @@ namespace ShopVerse.Repository
             _context = context;
             _repositories = new Hashtable();
         }
-
-        public async Task<int> CompleteAync() => await _context.SaveChangesAsync();
+        public async Task<int> CompleteAsync() => await _context.SaveChangesAsync();
 
         public IGenericRepository<TEntity, TKey> Repository<TEntity, TKey>() where TEntity : BaseEntity<TKey>
         {

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopVerse.Core.Entities;
+using ShopVerse.Core.Entities.Order;
 using ShopVerse.Repository.Data.Contexts;
 using System;
 using System.Collections.Generic;
@@ -56,6 +57,22 @@ namespace ShopVerse.Repository.Data
                 if (products is not null && products.Count() > 0)
                 {
                     await _context.Products.AddRangeAsync(products);
+                    await _context.SaveChangesAsync();
+                }
+            }
+
+            if (_context.DeliveryMethods.Count() == 0)
+            {
+                // brand 
+                //1 read data from json file
+                var DeliveryData = File.ReadAllText(@"..\ShopVerse.Repository\Data\DataSeed\delivery.json");
+                //2 convert json to list<T>
+
+                var DeliveryMethods = JsonSerializer.Deserialize<List<DeliveryMethod>>(DeliveryData);
+                //3 seed data to database
+                if (DeliveryMethods is not null)
+                {
+                    await _context.DeliveryMethods.AddRangeAsync(DeliveryMethods);
                     await _context.SaveChangesAsync();
                 }
             }
