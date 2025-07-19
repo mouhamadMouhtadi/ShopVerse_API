@@ -10,7 +10,7 @@ namespace ShopVerse.Core.Services.Interfaces
     public interface IOrderService
     {
         Task<Order> CreateOrderAsync(string buyerEmail,string basketId, int deliveryMethodId, Address shippingAddress);
-        Task<Order?> GetOrderByIdForSpecificUserAsync(int orderId,string buyerEmail);
+        Task<Order?> GetOrderByIdForSpecificUserAsync(string buyerEmail,int orderId);
         Task<IEnumerable<Order>?> GetOrdersForSpecificUserAsync(string buyerEmail);
     }
 }

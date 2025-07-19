@@ -16,11 +16,13 @@ namespace ShopVerse.Services.Services.Orders
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IBasketService _basketService;
+        private readonly IPaymentService _paymentService;
 
-        public OrderService(IUnitOfWork unitOfWork , IBasketService basketService)
+        public OrderService(IUnitOfWork unitOfWork , IBasketService basketService,IPaymentService paymentService)
         {
             _unitOfWork = unitOfWork;
             _basketService = basketService;
+            _paymentService = paymentService;
         }
         public async Task<Order> CreateOrderAsync(string buyerEmail, string basketId, int deliveryMethodId, Address shippingAddress)
         {
@@ -39,7 +41,17 @@ namespace ShopVerse.Services.Services.Orders
             }
             var subTotal = orderItems.Sum(item => item.Price * item.Quantity);
             var deliveryMethod = await _unitOfWork.Repository<DeliveryMethod,int>().GetAsync(deliveryMethodId);
-            var order = new Order(buyerEmail, shippingAddress,deliveryMethod,orderItems, subTotal,"");
+
+
+            if (!string.IsNullOrEmpty(basket.PaymentIntentId))
+            {
+                var spec = new OrderSpecificationWithPaymentIntentId(basket.PaymentIntentId);
+                var existingOrder = await _unitOfWork.Repository<Order, int>().GetWithSpecAsync(spec);
+                _unitOfWork.Repository<Order , int>().Delete(existingOrder);
+            }
+           var basketDto = await _paymentService.CreateOrUpdatePaymentIntentIdAsync(basketId);
+
+            var order = new Order(buyerEmail, shippingAddress,deliveryMethod,orderItems, subTotal,basketDto.PaymentIntentId);
 
            await _unitOfWork.Repository<Order, int>().AddAsync(order);
             var result = await _unitOfWork.CompleteAsync();
@@ -47,7 +59,7 @@ namespace ShopVerse.Services.Services.Orders
             return order;
         }  
 
-        public async Task<Order?> GetOrderByIdForSpecificUserAsync(int orderId, string buyerEmail)
+        public async Task<Order?> GetOrderByIdForSpecificUserAsync(string buyerEmail, int orderId)
         {
 
             var spec = new OrderSpecifications(buyerEmail,orderId);

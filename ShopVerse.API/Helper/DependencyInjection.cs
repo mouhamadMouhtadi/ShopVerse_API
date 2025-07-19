@@ -24,6 +24,7 @@ using ShopVerse.Core.Mapping.Auth;
 using ShopVerse.Core.Mapping.Orders;
 using ShopVerse.Services.Services.Orders;
 using ShopVerse.Services.Services.Basket;
+using ShopVerse.Services.Services.Payment;
 
 namespace ShopVerse.API.Helper
 {
@@ -75,6 +76,7 @@ namespace ShopVerse.API.Helper
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IBasketRepository, BasketRepository>();
+            services.AddScoped<IPaymentService, PaymentService>();
             return services;
         }
         private static IServiceCollection AddAutoMapperService(this IServiceCollection services, IConfiguration configuration)
